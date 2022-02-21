@@ -1,0 +1,33 @@
+= content main
+  script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+
+
+  div
+    
+
+    label for="course" <b>Select Course</b>
+    select#course type="select" name="course" 
+      option 
+      {{range .Courses}}
+        option value="{{.ID}}" {{.Name}} 
+      {{end}}
+
+    
+
+    button type="button" onclick="onDeleteClicked()" Delete Course
+
+  = javascript
+    
+      function onDeleteClicked(){
+        var out ={};
+        out.courseId = document.getElementById("course").value
+          
+        $.post("",out).then(function(res){
+          response=JSON.parse(res)
+          location.href="../student/list"
+        })
+
+      }
+
+    
+  

@@ -1,0 +1,31 @@
+= content main
+  script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+ 
+  form method="post"
+    label for="sname" <b>Student Name</b>
+    input#sname type="text" placeholder="Enter Username" name="sname" required=true
+
+    label for="email" <b>Email</b>
+    input#email type="text" placeholder="Enter Email" name="email" required=true
+
+    label for="phone" <b>Phone</b>
+    input#phone type="tel" name="phone" pattern="[0-9]{10}" placeholder="Enter Phone"
+
+    button type="button" onclick="onAddClicked()" Add Student
+
+  = javascript
+
+      function onAddClicked (){
+        var out ={};
+        out.sname = $("#sname").val()
+        out.email = $("#email").val()
+        out.phone = $("#phone").val()
+          
+        $.post("",out).then(function(res){
+          response=JSON.parse(res)
+          location.href="../student/list"
+        })
+      }
+
+    
+  

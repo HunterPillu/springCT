@@ -1,0 +1,19 @@
+= content main
+  script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  h2 Home Page:
+
+  div
+    button type="button" onclick="window.location='course/add'" Add a Course [Name, Professor Name, Description]
+  div
+    button type="button" onclick="window.location='student/add'" Add a Student [Name, Email, Phone]
+  div
+    button type="button" onclick="window.location='student/list'" Allocate a Student to one or more Course
+  div
+    button type="button" onclick="window.location='student/list'" List Students [Name, Email, Phone, Course Enrolled (comma separated string)]
+  div.ml-3
+    button type="button" onclick="window.location='course/delete'" Delete a given Course
+  div
+    button type="button" Get a Student’s data for a given Course
+
+    
+  

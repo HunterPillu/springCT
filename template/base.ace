@@ -1,0 +1,16 @@
+= doctype html
+html lang=en
+  head
+    
+    meta charset=utf-8
+    title Ace example
+    = css
+      h1 { color: blue; }
+  body
+    h1 Base Template : 
+    #container.wrapper
+      = yield main
+      = yield sub
+      / = include template/inc 
+    = javascript
+      // alert('{{.Msg}}');

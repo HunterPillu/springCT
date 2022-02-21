@@ -1,0 +1,30 @@
+= content main
+  script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  h2 Inner Template - Main :
+  form method="post"
+    label for="cname" <b>Course Name</b>
+    input#cname type="text" placeholder="Enter Username" name="cname" required=true
+
+    label for="pname" <b>Prof. Name</b>
+    input#pname type="text" placeholder="Enter Username" name="pname" required=true
+
+    label for="desc" <b>Desciption</b>
+    input#desc type="textarea" placeholder="Enter Username" name="desc"
+
+    button type="button" onclick="onAddClicked()" Add Course
+
+
+  = javascript
+       function onAddClicked(){
+        var out ={};
+        out.cname = $("#cname").val()
+        out.pname = $("#pname").val()
+        out.desc = $("#desc").val()
+          
+        $.post("",out).then(function(res){
+          response=JSON.parse(res)
+          location.href="../"
+        })
+      }
+    
+  

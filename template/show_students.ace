@@ -1,0 +1,25 @@
+= content main
+  script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  h2 Student List
+  table
+    thead
+      tr
+        th Name
+        th Email
+        th Phone
+    tbody
+      {{range .}}
+        tr
+          td {{.Name}}
+          td {{.Email}}
+          td {{.Phone}}
+          td 
+            {{range .Courses}}
+              p {{.CourseName}} ,
+            {{end}}
+          td 
+            button onclick="window.location='./allocate/{{.ID}}'" Allocate
+      {{end}}
+
+    
+  
